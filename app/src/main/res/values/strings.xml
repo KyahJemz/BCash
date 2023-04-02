@@ -18,4 +18,5 @@
     <string name="mnav_transfer">Transfer</string>
 
     <string name="btn_cashin">Cash In</string>
+    <string name="mnav_scan">QR Scan</string>
 </resources>

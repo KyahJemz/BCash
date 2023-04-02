@@ -55,6 +55,7 @@ public class transfer_form extends AppCompatActivity {
                 extras.putString("receiverId", receiverId.getText().toString());
                 extras.putString("amount", amount.getText().toString());
                 extras.putString("message", message.getText().toString());
+                extras.putString("summary", "");
 
                 Intent intent = new Intent(transfer_form.this, transfer_confirmation.class);
                 intent.putExtras(extras);

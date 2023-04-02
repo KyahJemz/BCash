@@ -135,6 +135,8 @@ public class dashboard extends AppCompatActivity {
             intent = new Intent(cntxt, about.class);
         } else if ("settings".equals(tag)) {
             intent = new Intent(cntxt, settings.class);
+        } else if ("qrscan".equals(tag)) {
+            intent = new Intent(cntxt, qrscanner.class);
         } else {
             Toast.makeText(cntxt, "("+tag+")", Toast.LENGTH_SHORT).show();
         }

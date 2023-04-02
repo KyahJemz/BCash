@@ -33,10 +33,11 @@ public class transfer_confirmation extends AppCompatActivity {
     private RequestQueue queue;
     private GoogleSignInOptions gso;
     private GoogleSignInClient gsc;
-    String type, receiverId, amount, message;
+    String type, receiverId, amount, message, summary;
 
     TextView tvType, tvReceiverId, tvAmount, tvMessage, TvSummary;
     Button btnConfirmTransaction;
+    Bundle extras;
 
     ConstraintLayout loading;
 
@@ -53,12 +54,13 @@ public class transfer_confirmation extends AppCompatActivity {
 
         googleVerification();
 
-        Bundle extras = getIntent().getExtras();
+        extras = getIntent().getExtras();
         if (extras != null) {
             type = extras.getString("type");
             receiverId = extras.getString("receiverId");
             amount = extras.getString("amount");
             message = extras.getString("message");
+            summary = extras.getString("summary");
         } else {
             finish();
             Intent intent = new Intent(transfer_confirmation.this, dashboard.class);
@@ -76,7 +78,7 @@ public class transfer_confirmation extends AppCompatActivity {
         tvReceiverId.setText("Receiver Id : "+receiverId);
         tvAmount.setText("Amount : "+amount);
         tvMessage.setText("Message : "+message);
-        TvSummary.setText("Summary : ");
+        TvSummary.setText("Summary : "+summary);
 
         btnConfirmTransaction = findViewById(R.id.btn_confirmTransaction);
         btnConfirmTransaction.setOnClickListener(new View.OnClickListener() {

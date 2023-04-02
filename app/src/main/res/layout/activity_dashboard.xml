@@ -245,11 +245,13 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:id="@+id/btn_mnav_CashIn"
+                        android:id="@+id/btn_mnav_QRScan"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/header_background"
                         android:padding="10dp"
+                        android:onClick="moveTo"
+                        android:tag="qrscan"
                         android:layout_marginEnd="20dp"
                         android:orientation="vertical">
 
@@ -258,13 +260,13 @@
                             android:layout_height="23pt"
                             android:layout_gravity="center"
                             android:contentDescription="@string/app_name"
-                            app:srcCompat="@drawable/cashin" />
+                            app:srcCompat="@drawable/scan" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/mnav_cashin"
+                            android:text="@string/mnav_scan"
                             android:layout_gravity="center"
                             android:textColor="@color/sscr_gold2"
                             android:textSize="15sp" />
