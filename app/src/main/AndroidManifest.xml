@@ -15,8 +15,11 @@
         android:theme="@style/Theme.BCash"
         tools:targetApi="31">
         <activity
+            android:name=".help_details"
+            android:exported="false" />
+        <activity
             android:name=".qrscanner"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".transaction_details"
             android:exported="false" />
@@ -55,6 +58,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

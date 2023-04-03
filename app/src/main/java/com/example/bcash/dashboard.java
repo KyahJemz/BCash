@@ -2,9 +2,11 @@ package com.example.bcash;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +24,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,6 +37,7 @@ public class dashboard extends AppCompatActivity {
     private GoogleSignInOptions gso;
     private GoogleSignInClient gsc;
     TextView tvuserFullName ,tvuserPersonalId, tvuserBalance;
+    ImageView b11, b12,b13,b14, b21,b22,b23,b24;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,32 @@ public class dashboard extends AppCompatActivity {
 
         tvuserFullName.setText("Hello "+session.getFirstName());
         tvuserPersonalId.setText("Id : "+session.getPersonalId());
+
+        b11 = findViewById(R.id.banner_1_1);
+        b12 = findViewById(R.id.banner_1_2);
+        b13 = findViewById(R.id.banner_1_3);
+        b14 = findViewById(R.id.banner_1_4);
+        b21 = findViewById(R.id.banner_2_1);
+        b22 = findViewById(R.id.banner_2_2);
+        b23 = findViewById(R.id.banner_2_3);
+        b24 = findViewById(R.id.banner_2_4);
+
+        Uri b11x = Uri.parse(bcashapi.url+"/banners/functions-1.png");
+        Picasso.with(this).load(b11x).into(b11);
+        Uri b12x = Uri.parse(bcashapi.url+"/banners/functions-2.png");
+        Picasso.with(this).load(b12x).into(b12);
+        Uri b13x = Uri.parse(bcashapi.url+"/banners/functions-3.png");
+        Picasso.with(this).load(b13x).into(b13);
+        Uri b14x = Uri.parse(bcashapi.url+"/banners/functions-4.png");
+        Picasso.with(this).load(b14x).into(b14);
+        Uri b21x = Uri.parse(bcashapi.url+"/banners/ans-1.png");
+        Picasso.with(this).load(b21x).into(b21);
+        Uri b22x = Uri.parse(bcashapi.url+"/banners/ans-2.png");
+        Picasso.with(this).load(b22x).into(b22);
+        Uri b23x = Uri.parse(bcashapi.url+"/banners/ans-3.png");
+        Picasso.with(this).load(b23x).into(b23);
+        Uri b24x = Uri.parse(bcashapi.url+"/banners/ans-4.png");
+        Picasso.with(this).load(b24x).into(b24);
     }
 
     boolean getDataFromApi(){

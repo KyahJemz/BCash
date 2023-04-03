@@ -398,6 +398,7 @@
                             android:layout_width="165pt"
                             android:layout_height="90pt"
                             android:layout_marginEnd="20dp"
+                            android:id="@+id/banner_1_1"
                             android:background="@drawable/white2_border"
                             android:padding="5dp"
                             android:scaleType="fitXY"
@@ -407,6 +408,7 @@
                             android:layout_width="165pt"
                             android:layout_height="90pt"
                             android:layout_marginEnd="20dp"
+                            android:id="@+id/banner_1_2"
                             android:background="@drawable/white2_border"
                             android:padding="5dp"
                             android:scaleType="fitXY"
@@ -416,6 +418,7 @@
                             android:layout_width="165pt"
                             android:layout_height="90pt"
                             android:layout_marginEnd="20dp"
+                            android:id="@+id/banner_1_3"
                             android:background="@drawable/white2_border"
                             android:padding="5dp"
                             android:scaleType="fitXY"
@@ -424,6 +427,7 @@
                         <ImageView
                             android:layout_width="165pt"
                             android:layout_height="90pt"
+                            android:id="@+id/banner_1_4"
                             android:background="@drawable/white2_border"
                             android:padding="5dp"
                             android:scaleType="fitXY"
@@ -470,6 +474,7 @@
                         android:paddingHorizontal="30dp">
 
                         <ImageView
+                            android:id="@+id/banner_2_1"
                             android:layout_width="165pt"
                             android:layout_height="90pt"
                             android:layout_marginEnd="20dp"
@@ -481,6 +486,7 @@
                         <ImageView
                             android:layout_width="165pt"
                             android:layout_height="90pt"
+                            android:id="@+id/banner_2_2"
                             android:layout_marginEnd="20dp"
                             android:background="@drawable/white2_border"
                             android:padding="5dp"
@@ -491,6 +497,7 @@
                             android:layout_width="165pt"
                             android:layout_height="90pt"
                             android:layout_marginEnd="20dp"
+                            android:id="@+id/banner_2_3"
                             android:background="@drawable/white2_border"
                             android:padding="5dp"
                             android:scaleType="fitXY"
@@ -501,6 +508,7 @@
                             android:layout_height="90pt"
                             android:background="@drawable/white2_border"
                             android:padding="5dp"
+                            android:id="@+id/banner_2_4"
                             android:scaleType="fitXY"
                             app:srcCompat="@drawable/no_image" />
                     </LinearLayout>

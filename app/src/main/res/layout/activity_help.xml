@@ -115,6 +115,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginVertical="5dp"
                     android:layout_marginLeft="10dp"
+                    android:tag="1"
+                    android:onClick="help"
                     android:background="@drawable/white1_border">
 
                     <TextView
@@ -145,6 +147,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginVertical="5dp"
                     android:layout_marginLeft="10dp"
+                    android:tag="2"
+                    android:onClick="help"
                     android:background="@drawable/white1_border">
 
                     <TextView
@@ -175,6 +179,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginVertical="5dp"
                     android:layout_marginLeft="10dp"
+                    android:tag="3"
+                    android:onClick="help"
                     android:background="@drawable/white1_border">
 
                     <TextView
@@ -205,6 +211,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginVertical="5dp"
                     android:layout_marginLeft="10dp"
+                    android:tag="4"
+                    android:onClick="help"
                     android:background="@drawable/white1_border">
 
                     <TextView
@@ -251,6 +259,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginVertical="5dp"
                     android:layout_marginLeft="10dp"
+                    android:tag="5"
+                    android:onClick="help"
                     android:background="@drawable/white1_border">
 
                     <TextView
@@ -281,6 +291,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginVertical="5dp"
                     android:layout_marginLeft="10dp"
+                    android:tag="6"
+                    android:onClick="help"
                     android:background="@drawable/white1_border">
 
                     <TextView
@@ -311,6 +323,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginVertical="5dp"
                     android:layout_marginLeft="10dp"
+                    android:tag="7"
+                    android:onClick="help"
                     android:background="@drawable/white1_border">
 
                     <TextView
@@ -341,6 +355,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginVertical="5dp"
                     android:layout_marginLeft="10dp"
+                    android:tag="8"
+                    android:onClick="help"
                     android:background="@drawable/white1_border">
 
                     <TextView
@@ -371,6 +387,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginVertical="5dp"
                     android:layout_marginLeft="10dp"
+                    android:tag="9"
+                    android:onClick="help"
                     android:background="@drawable/white1_border">
 
                     <TextView

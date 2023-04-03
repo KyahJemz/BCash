@@ -149,8 +149,6 @@ public class transaction_details extends AppCompatActivity {
     }
 
     public void back(View view){
-        finish();
-        Intent intent = new Intent(transaction_details.this, transactions.class);
-        startActivity(intent);
+        onBackPressed();
     }
 }
