@@ -1,37 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-
-
-    <color name="text">#000000</color>
-    <color name="sscr_green">#067335</color>
-    <color name="sscr_titlebar">#067335</color>
-    <color name="sscr_yellow">#F2E205</color>
-    <color name="sscr_brown">#D9C58B</color>
-    <color name="sscr_gold">#8F7B41</color>
-    <color name="sscr_gold2">#715F29</color>
-    <color name="sscr_red">#D91E1E</color>
-    <color name="sscr_black">#0D0D0D</color>
-    <color name="sscr_background">#EFEBDE</color>
-
-    <color name="headerBackgroundColor">#E6E6B060</color>
-
-    <color name="white">#FFFFFF</color>
-    <color name="white1">#DDDDDD</color>
-    <color name="white2">#C8C8C8</color>
-    <color name="white3">#ECECEC</color>
-    <color name="cover">#63D9C58B</color>
-
-    <color name="pnlBG">#80000000</color>
-
-    <color name="backgroundStart">#FBE08E</color>
-    <color name="backgroundEnd">#FFFBF0</color>
-
-
-    <color name="login_text">#FEF9D9</color>
+    <color name="white">#FFFFFFFF</color>
 </resources>

@@ -3,58 +3,74 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/logo_3"
+        android:icon="@drawable/logo_sscr"
         android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_sscr"
         android:supportsRtl="true"
         android:theme="@style/Theme.BCash"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".help_details"
+            android:name=".QRScanActivity"
             android:exported="false" />
         <activity
-            android:name=".qrscanner"
+            android:name=".WhitelistAddActivity"
             android:exported="false" />
         <activity
-            android:name=".transaction_details"
+            android:name=".ReceiptActivity"
             android:exported="false" />
         <activity
-            android:name=".transfer_confirmation"
+            android:name=".PINCreationActivity"
             android:exported="false" />
         <activity
-            android:name=".transfer_form"
+            android:name=".PINValidationActivity"
             android:exported="false" />
         <activity
-            android:name=".settings"
+            android:name=".OTPValidationActivity"
             android:exported="false" />
         <activity
-            android:name=".about"
+            android:name=".TransferConfirmationActivity"
             android:exported="false" />
         <activity
-            android:name=".parental_controls"
+            android:name=".TransferActivity"
             android:exported="false" />
         <activity
-            android:name=".login_verification"
+            android:name=".PurchaseConfirmationActivity"
             android:exported="false" />
         <activity
-            android:name=".profile"
+            android:name=".SecuritySettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".help"
+            android:name=".ActivityLogsActivity"
             android:exported="false" />
         <activity
-            android:name=".transactions"
+            android:name=".WhitelistActivity"
             android:exported="false" />
         <activity
-            android:name=".dashboard"
+            android:name=".TransactionsActivity"
             android:exported="false" />
         <activity
-            android:name=".login"
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,6 +78,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="barcode_ui"/>
     </application>
 
 </manifest>

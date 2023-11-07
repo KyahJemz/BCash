@@ -4,402 +4,592 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".profile">
-
+    style="@style/Background"
+    tools:context=".ProfileActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/TitleBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/titlebar_background"
-        android:padding="12dp"
+        android:id="@+id/cl_Loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#80000000"
+        android:elevation="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/NavigationContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
-        <TextView
-            android:id="@+id/textView"
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="BCash Profile"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_PinConfirmation"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/NavigationBar"
+        android:background="#80000000"
+        android:elevation="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TitleBar">
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/enter_your_pin_code_to_confirm" />
+
+            <EditText
+                android:id="@+id/et_PinCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:maxLength="6"
+                android:inputType="numberPassword" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_PinCancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="@string/cancel" />
+
+                <TextView
+                    android:id="@+id/tv_PinConfirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="@string/confirm" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        style="@style/BackgroundImage"
+        android:layout_width="600dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/Image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="@string/profile_scroll_view"
+        app:layout_constraintBottom_toTopOf="@+id/NavigationContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/UserProfileImage"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:layout_margin="20dp"
-                android:padding="3dp"
-                android:scaleType="fitXY"
-                android:background="@drawable/white2_border"
-                android:src="@drawable/logo1" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/iv_ProfileImage"
+                    style="@style/ProfileImage"
+                    android:layout_width="125dp"
+                    android:layout_height="125dp"
+                    android:background="@drawable/background_circle"
+                    android:src="@drawable/image_sample_profile" />
+
+                <TextView
+                    android:id="@+id/tv_ProfileName"
+                    style="@style/ProfileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loading" />
+
+                <TextView
+                    android:id="@+id/tv_ProfileEmail"
+                    style="@style/ProfileEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/loading" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_SecuritySettings"
+                style="@style/ProfileItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <ImageView
+                    style="@style/ProfileItemImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_circle_red"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_profile_security_settings" />
+
+                <TextView
+                    style="@style/ProfileItemText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/security_settings" />
+
+                <ImageView
+
+                    style="@style/ProfileItemNext"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_next" />
+            </LinearLayout>
+
 
             <TextView
-                android:id="@+id/UserFullName"
+                style="@style/ProfileDivider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Stephen Regan James Layson"
-                android:textAlignment="center"
-                android:textColor="@color/sscr_gold2"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                android:text="@string/general_settings" />
+
+            <LinearLayout
+                style="@style/ProfileItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <ImageView
+                    style="@style/ProfileItemImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_circle_red"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_profile_transfer" />
+
+                <TextView
+                    style="@style/ProfileItemText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/allow_transfers" />
+
+                <Switch
+                    android:id="@+id/s_AllowTransfers"
+                    style="@style/ProfileItemNext"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:minWidth="50dp"
+                    android:minHeight="50dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ProfileItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <ImageView
+                    style="@style/ProfileItemImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_circle_red"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_profile_transactions" />
+
+                <TextView
+                    style="@style/ProfileItemText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/allow_transactions" />
+
+                <Switch
+                    android:id="@+id/s_AllowTransactions"
+                    style="@style/ProfileItemNext"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:minWidth="50dp"
+                    android:minHeight="50dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ProfileItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <ImageView
+                    style="@style/ProfileItemImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_circle_red"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_profile_card" />
+
+                <TextView
+                    style="@style/ProfileItemText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/allow_use_of_card" />
+
+                <Switch
+                    android:id="@+id/s_AllowUseOfCard"
+                    style="@style/ProfileItemNext"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:minWidth="50dp"
+                    android:minHeight="50dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ProfileItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <ImageView
+                    style="@style/ProfileItemImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_circle_red"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_profile_confirm" />
+
+                <TextView
+                    style="@style/ProfileItemText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/transaction_auto_confirm" />
+
+                <Switch
+                    android:id="@+id/s_TransactionAutoConfirm"
+                    style="@style/ProfileItemNext"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:minWidth="50dp"
+                    android:minHeight="50dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_AllowModifySettingsContainer"
+                style="@style/ProfileItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <ImageView
+                    style="@style/ProfileItemImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_circle_red"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_profile_confirm_manage_settings" />
+
+                <TextView
+                    style="@style/ProfileItemText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Allow Modify Settings" />
+
+                <Switch
+                    android:id="@+id/s_AllowModifySettings"
+                    style="@style/ProfileItemNext"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:minWidth="50dp"
+                    android:minHeight="50dp" />
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/UserId"
+                style="@style/ProfileDivider"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Id : 202010170"
-                android:textAlignment="center"
-                android:textColor="@color/sscr_gold2"
-                android:textSize="25sp"
-                android:layout_marginBottom="50dp"/>
+                android:text="@string/more" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/btn_parentalcontrols"
+            <LinearLayout
+                android:id="@+id/ll_Whitelist"
+                style="@style/ProfileItem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:visibility="gone"
-                android:layout_marginVertical="5dp"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/white2_border"
-                android:onClick="moveTo"
-                android:tag="parenta-controls">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
 
                 <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/parentcontrols"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    style="@style/ProfileItemImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_circle_red"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_profile_whitelist" />
 
                 <TextView
+                    style="@style/ProfileItemText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="Parental Controls"
-                    android:textColor="@color/sscr_gold2"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView3"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/btn_limitations"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:visibility="gone"
-                android:layout_marginVertical="5dp"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/white2_border">
+                    android:text="@string/whitelist" />
 
                 <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/limit"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    style="@style/ProfileItemNext"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_next" />
+            </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="Account Limitations"
-                    android:textColor="@color/sscr_gold2"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView4"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/btn_settings"
+            <LinearLayout
+                android:id="@+id/ll_ActivityLogs"
+                style="@style/ProfileItem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:visibility="gone"
-                android:layout_marginVertical="5dp"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/white2_border"
-                android:onClick="moveTo"
-                android:tag="settings">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
 
                 <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/settings"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    style="@style/ProfileItemImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_circle_red"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_profile_activity_logs" />
 
                 <TextView
+                    style="@style/ProfileItemText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="Settings"
-                    android:textColor="@color/sscr_gold2"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView6"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/btn_help"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_marginVertical="5dp"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/white2_border"
-                android:onClick="moveTo"
-                android:tag="help">
+                    android:text="@string/activity_logs" />
 
                 <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/support"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    style="@style/ProfileItemNext"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_next" />
+            </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="Help"
-                    android:textColor="@color/sscr_gold2"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView5"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/btn_about"
+            <LinearLayout
+                android:id="@+id/ll_LoginHistory"
+                style="@style/ProfileItem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_marginVertical="5dp"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/white2_border"
-                android:onClick="moveTo"
-                android:tag="about">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
 
                 <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/about"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    style="@style/ProfileItemImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_circle_red"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_profile_login_history" />
 
                 <TextView
+                    style="@style/ProfileItemText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="About BCash"
-                    android:textColor="@color/sscr_gold2"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView7"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/btn_logout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:layout_marginVertical="5dp"
-                android:layout_marginHorizontal="10dp"
-                android:background="@drawable/white2_border"
-                android:onClick="signOut">
+                    android:text="@string/login_history" />
 
                 <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@drawable/logout"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    style="@style/ProfileItemNext"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_next" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_Logout"
+                style="@style/ProfileItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <ImageView
+                    style="@style/ProfileItemImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/background_circle_red"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_profile_logout" />
 
                 <TextView
+                    style="@style/ProfileItemText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="Log Out"
-                    android:textColor="@color/sscr_gold2"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imageView8"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:text="@string/logout" />
 
-
-
-
+                <ImageView
+                    style="@style/ProfileItemNext"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_next" />
+            </LinearLayout>
 
         </LinearLayout>
+
+
     </ScrollView>
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/NavigationBar"
+    <LinearLayout
+        android:id="@+id/NavigationContainer"
+        style="@style/NavContainer"
         android:layout_width="0dp"
-        android:layout_height="27pt"
-        android:background="@drawable/userid_background"
-        android:elevation="20dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:id="@+id/ll_Nav1"
+            style="@style/NavItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <ImageView
+                android:id="@+id/tv_Nav1_Image"
+                style="@style/NavImage"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:contentDescription="@string/Icon"
+                android:src="@drawable/icon_nav1" />
+
+            <TextView
+                android:id="@+id/tv_Nav1_Text"
+                style="@style/NavText"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tag="dashboard"
-                android:onClick="moveTo"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <ImageView
-                    android:id="@+id/nav_Home"
-                    android:layout_width="15pt"
-                    android:layout_height="15pt"
-                    android:layout_gravity="center"
-                    android:contentDescription="@string/app_name"
-                    app:srcCompat="@drawable/home" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nav_home"
-                    android:textAlignment="center"
-                    android:textColor="@color/sscr_black" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tag="transaction"
-                android:onClick="moveTo"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <ImageView
-                    android:id="@+id/nav_Transactions"
-                    android:layout_width="15pt"
-                    android:layout_height="15pt"
-                    android:layout_gravity="center"
-                    android:contentDescription="@string/app_name"
-                    app:srcCompat="@drawable/transaction" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nav_transactions"
-                    android:textAlignment="center"
-                    android:textColor="@color/sscr_black" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tag="help"
-                android:onClick="moveTo"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <ImageView
-                    android:id="@+id/nav_Help"
-                    android:layout_width="15pt"
-                    android:layout_height="15pt"
-                    android:layout_gravity="center"
-                    android:contentDescription="@string/app_name"
-                    app:srcCompat="@drawable/chat" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nav_help"
-                    android:textAlignment="center"
-                    android:textColor="@color/black" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:tag="profile"
-                android:onClick="moveTo"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <ImageView
-                    android:id="@+id/nav_Profile"
-                    android:layout_width="15pt"
-                    android:layout_height="15pt"
-                    android:layout_gravity="center"
-                    android:contentDescription="@string/app_name"
-                    android:tint="@color/sscr_green"
-                    app:srcCompat="@drawable/profile"
-                    tools:ignore="UseAppTint" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/nav_profile"
-                    android:textAlignment="center"
-                    android:textColor="@color/sscr_green" />
-            </LinearLayout>
+                android:text="@string/Nav1" />
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/ll_Nav2"
+            style="@style/NavItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tv_Nav2_Image"
+                style="@style/NavImage"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:contentDescription="@string/Icon"
+                android:src="@drawable/icon_nav2" />
+
+            <TextView
+                android:id="@+id/tv_Nav2_Text"
+                style="@style/NavText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Nav2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_Nav3"
+            style="@style/NavItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tv_Nav3_Image"
+                style="@style/NavImage"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:contentDescription="@string/Icon"
+                android:src="@drawable/icon_nav3" />
+
+            <TextView
+                android:id="@+id/tv_Nav3_Text"
+                style="@style/NavText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Nav3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_Nav4"
+            style="@style/NavItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/tv_Nav4_Image"
+                style="@style/ActiveNavImage"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:contentDescription="@string/Icon"
+                android:src="@drawable/icon_nav4" />
+
+            <TextView
+                android:id="@+id/tv_Nav4_Text"
+                style="@style/ActiveNavText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Nav4" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

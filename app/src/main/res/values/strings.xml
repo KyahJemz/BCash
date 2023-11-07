@@ -1,22 +1,83 @@
 <resources>
-    <string name="app_name">Baste E-Wallet</string>
+    <string name="app_name">BCash</string>
+    <string name="web_client_id">953479842774-b5lulonq4tr7fc6deflnrhqnjf2jm105.apps.googleusercontent.com</string>
+    <string name="google_logo">Google Logo</string>
+    <string name="Image">Image</string>
+    <string name="Icon">Icon</string>
+    <string name="none">-</string>
 
-    <string name="welcomeText">Welcome To BCash</string>
+    <!-- GENERAL -->
+    <string name="Nav1">Home</string>
+    <string name="Nav2">Transactions</string>
+    <string name="Nav3">Notifications</string>
+    <string name="Nav4">Profile</string>
 
-    <string name="txt_availablebalance">Available Balance</string>
+    <!-- HOME -->
+    <string name="main_card">Main Card</string>
+    <string name="balance">Balance</string>
 
-    <string name="nav_profile">Profile</string>
-    <string name="nav_help">Help</string>
-    <string name="nav_transactions">Transactions</string>
-    <string name="nav_home">Home</string>
+    <string name="HomeNav1">Cash In</string>
+    <string name="HomeNav2">Transfer</string>
+    <string name="HomeNav3">QR Code</string>
+    <string name="HomeNav4">Whitelist</string>
+    <string name="HomeNav5">Settings</string>
 
-    <string name="mnav_settings">Settings</string>
-    <string name="mnav_logs">Logs</string>
-    <string name="mnav_rewards">Rewards</string>
-    <string name="mnav_cashin">Cash In</string>
-    <string name="mnav_idcard">ID Card</string>
-    <string name="mnav_transfer">Transfer</string>
 
-    <string name="btn_cashin">Cash In</string>
-    <string name="mnav_scan">QR Scan</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="notifications">Notifications</string>
+    <string name="profile_scroll_view">Profile Scroll View</string>
+    <string name="login_history">Login History</string>
+    <string name="activity_logs">Activity Logs</string>
+    <string name="whitelist">Whitelist</string>
+    <string name="more">More</string>
+    <string name="transaction_auto_confirm">Transaction Auto Confirm</string>
+    <string name="allow_use_of_card">Allow Use of Card</string>
+    <string name="allow_transactions">Allow Transactions</string>
+    <string name="allow_transfers">Allow Transfers</string>
+    <string name="general_settings">General Settings</string>
+    <string name="security_settings">Security Settings</string>
+    <string name="loading">Loading...</string>
+    <string name="about">About</string>
+    <string name="logout">Logout</string>
+    <string name="enter_your_pin_code_to_confirm">Enter your PIN Code to confirm.</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="help_page">Help Page</string>
+    <string name="help">Help</string>
+    <string name="transaction_details">Transaction Details</string>
+    <string name="transfer_form">Transfer Form</string>
+    <string name="receiver_id">Receiver Id:</string>
+    <string name="amount">Amount:</string>
+    <string name="transfer">Transfer</string>
+    <string name="message">Message:</string>
+    <string name="please_double_check_the_entered_amount_and_recipient_before_confirming_the_transfer">Please double-check the entered amount and recipient before confirming the transfer.</string>
+    <string name="i_am_certain_and_confirm_this_transaction">I am certain and confirm this transaction.</string>
+    <string name="i_confirm_that_the_details_are_correct">I confirm that the details are correct.</string>
+    <string name="confirming_this_transfer_implies_finality_the_system_cannot_be_held_responsible_once_confirmed_proceed_with_caution">Confirming this transfer implies finality. The system cannot be held responsible once confirmed. Proceed with caution.</string>
+
+
+    <string name="confirm_transfer_note">Please ensure all information is corrrect. By clicking \'Transfer\' button means that you have validated all information and confirming it to be correct.</string>
+    <string name="destination">Destination</string>
+    <string name="source">Source</string>
+    <string name="purpose">Purpose</string>
+    <string name="confirm_transfer">Confirm Transfer</string>
+    <string name="enter_pin_code">Enter PIN code</string>
+    <string name="enter_otp_code">Enter OTP Code</string>
+    <string name="a_otp_code_has_been_sent_to_your_email">A OTP code has been sent to your email.</string>
+    <string name="re_type_new_pin_code">Re-type new PIN code</string>
+    <string name="old_pin_code">Old PIN code</string>
+    <string name="new_pin_code">New PIN code</string>
+    <string name="LoginHistoryInfo">Monitor your login history closely and be vigilant for any unauthorized access. Should such incidents reoccur, change your PIN immediately and seek guidance from system administrators.</string>
+    <string name="WhitelistIntro">Only trusted and whitelisted accounts are authorized for fund transfers within the application.</string>
+    <string name="WhitelistAddAccountInfo1">By adding an account to your whitelist, you confirm that the provided information is accurate and has been validated to the best of your knowledge. Proceeding with this action will authorize the added account for privileged access and transactions based on your permissions.</string>
+    <string name="WhitelistAddAccountInfo2">Please ensure that the account details and permissions are verified before adding them to your whitelist.</string>
+    <string name="WhitelistAddAccountInfo3">Would you like to continue and add this account to your whitelist?</string>
+    <string name="your_pin_code">Your PIN Code</string>
+    <string name="ActivitylogsInfo">You can monitor your recent activities and interactions within the app. If you notice any suspicious or potentially harmful changes, please notify the system administrators immediately.</string>
+    <string name="SecuritySettingsInfo1">For your safety and protection, please input your unique PIN code in the field below. This PIN code ensures that only you can access your account.</string>
+    <string name="SecuritySettingsInfo2">Please refrain from sharing this PIN code with anyone to maintain the confidentiality and security of your account.</string>
+    <string name="SecuritySettingsInfo3">Thank you for keeping your account secure!</string>
+    <string name="ScanQRInfo">Exercise caution when scanning QR codes. Be mindful of potential security risks associated with unfamiliar or untrusted sources. Avoid scanning codes from unknown or suspicious origins to safeguard your device and personal data.</string>
+    <string name="PaymentConfirmationInfo1">Have you initiated this transaction? If not, kindly cancel it immediately.</string>
+
 </resources>
