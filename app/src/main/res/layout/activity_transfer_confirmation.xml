@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TransferConfirmationActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_Loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#80000000"
+        android:elevation="100dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        style="@style/BackgroundImage"
+        android:layout_width="600dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/Image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            style="@style/HeaderContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_header"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_Back"
+                style="@style/HeaderImage"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/icon_back" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Transfer Confrimation"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Validate all information and confirm it to be correct" />
+
+                <LinearLayout
+                    style="@style/FormItemContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TableLayout
+                        style="@style/TransferConfirmationTable"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableRow
+                            style="@style/TransferConfirmationTableRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                style="@style/TransferConfirmationTableText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/source" />
+
+                            <LinearLayout
+                                style="@style/TransferConfirmationTableText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_TransferConfirmationSourceName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#E6FFFFFF"
+                                    android:text="@string/none" />
+
+                                <TextView
+                                    android:id="@+id/tv_TransferConfirmationSourceId"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#E6FFFFFF"
+                                    android:text="@string/none" />
+                            </LinearLayout>
+
+                        </TableRow>
+
+                        <TableRow
+                            style="@style/TransferConfirmationTableRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                style="@style/TransferConfirmationTableText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/destination" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                style="@style/TransferConfirmationTableText"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_TransferConfirmationDestinationName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#E6FFFFFF"
+                                    android:text="@string/none" />
+
+                                <TextView
+                                    android:id="@+id/tv_TransferConfirmationDestinationId"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#E6FFFFFF"
+                                    android:text="@string/none" />
+                            </LinearLayout>
+
+
+                        </TableRow>
+
+                        <TableRow
+                            style="@style/TransferConfirmationTableRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                style="@style/TransferConfirmationTableText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/amount" />
+
+                            <TextView
+                                android:id="@+id/tv_TransferConfirmationAmount"
+                                style="@style/TransferConfirmationTableText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/none" />
+
+                        </TableRow>
+
+                        <TableRow
+                            style="@style/TransferConfirmationTableRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                style="@style/TransferConfirmationTableText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/purpose" />
+
+                            <TextView
+                                style="@style/TransferConfirmationTableText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Fund Transfer" />
+
+                        </TableRow>
+
+                        <TableRow
+                            style="@style/TransferConfirmationTableRow"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                style="@style/TransferConfirmationTableText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/message" />
+
+                            <TextView
+                                android:id="@+id/tv_TransferConfirmationMessage"
+                                style="@style/TransferConfirmationTableText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/none" />
+                        </TableRow>
+
+                    </TableLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/FormItemContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/confirm_transfer_note"
+                    android:textAlignment="center" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/FormItemContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_ConfirmTransferBtn"
+                        style="@style/FormTextButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/confirm_transfer" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
