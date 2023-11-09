@@ -146,6 +146,7 @@
                         android:ems="10"
                         android:inputType="numberPassword"
                         android:maxLength="6"
+                        android:hint="Old 6 digit PIN"
                         android:textAlignment="center" />
                 </LinearLayout>
 
@@ -169,6 +170,7 @@
                         android:ems="10"
                         android:inputType="numberPassword"
                         android:maxLength="6"
+                        android:hint="New 6 digit PIN"
                         android:textAlignment="center" />
                 </LinearLayout>
 
@@ -192,6 +194,7 @@
                         android:ems="10"
                         android:inputType="numberPassword"
                         android:maxLength="6"
+                        android:hint="New 6 digit PIN"
                         android:textAlignment="center" />
                 </LinearLayout>
 

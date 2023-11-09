@@ -125,10 +125,28 @@ public class HomeActivity extends AppCompatActivity {
                             @Override
                             public void run() {
                                 tv_HomeProfileCardId = findViewById(R.id.tv_HomeProfileCardId);
-                                tv_HomeProfileCardId.setText(SchoolPersonalId);
+                                if (CardIdVisible) {
+                                    CardIdVisible = false;
+                                    tv_HomeProfileCardId.setText(Helpers.getHiddenPersonalId(Optional.ofNullable(Session.getPersonalId(HomeActivity.this)).orElse("")));
+                                    iv_HomeProfileCardIdVisible.setImageResource(R.drawable.icon_visibility_off);
+                                } else {
+                                    CardIdVisible = true;
+                                    tv_HomeProfileCardId.setText(Optional.ofNullable(Session.getPersonalId(HomeActivity.this)).orElse(""));
+                                    iv_HomeProfileCardIdVisible.setImageResource(R.drawable.icon_visibility);
+                                }
 
                                 tv_HomeProfileCardBalance = findViewById(R.id.tv_HomeProfileCardBalance);
-                                tv_HomeProfileCardBalance.setText(Helpers.getBalance(Balance));
+                                if (CardBalanceVisible) {
+                                    CardBalanceVisible = false;
+                                    tv_HomeProfileCardBalance.setText(Helpers.getHiddenBalance(Optional.ofNullable(Session.getBalance(HomeActivity.this)).orElse("0.00")));
+                                    iv_HomeProfileCardBalanceVisible.setImageResource(R.drawable.icon_visibility_off);
+                                } else {
+                                    CardBalanceVisible = true;
+                                    tv_HomeProfileCardBalance.setText(Helpers.getBalance(Optional.ofNullable(Session.getBalance(HomeActivity.this)).orElse("0.00")));
+                                    iv_HomeProfileCardBalanceVisible.setImageResource(R.drawable.icon_visibility);
+                                }
+
+
 
                                 tv_HomeProfileCardName = findViewById(R.id.tv_HomeProfileCardName);
                                 tv_HomeProfileCardName.setText(Firstname.toUpperCase() + " " +Lastname.toUpperCase());
@@ -165,11 +183,11 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (CardBalanceVisible) {
                     CardBalanceVisible = false;
-                    tv_HomeProfileCardBalance.setText(Helpers.getHiddenBalance(Optional.ofNullable(Session.getBalance(HomeActivity.this)).orElse("0")));
+                    tv_HomeProfileCardBalance.setText(Helpers.getHiddenBalance(Optional.ofNullable(Session.getBalance(HomeActivity.this)).orElse("0.00")));
                     iv_HomeProfileCardBalanceVisible.setImageResource(R.drawable.icon_visibility_off);
                 } else {
                     CardBalanceVisible = true;
-                    tv_HomeProfileCardBalance.setText(Helpers.getBalance(Optional.ofNullable(Session.getBalance(HomeActivity.this)).orElse("0")));
+                    tv_HomeProfileCardBalance.setText(Helpers.getBalance(Optional.ofNullable(Session.getBalance(HomeActivity.this)).orElse("0.00")));
                     iv_HomeProfileCardBalanceVisible.setImageResource(R.drawable.icon_visibility);
                 }
             }

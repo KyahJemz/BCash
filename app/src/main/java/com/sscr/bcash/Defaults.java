@@ -8,5 +8,5 @@ public class Defaults {
 
     public static Double MinimumTransfer = 1.0;
     public static Double MaximumTransfer = 1000.0;
-    public static int SplashScreenTime = 2000; //milliseconds
+    public static int SplashScreenTime = 3000; //milliseconds
 }

@@ -131,9 +131,11 @@ public class LoginActivity extends AppCompatActivity {
                         JSONObject parametersResult = jsonResponse.optJSONObject("Parameters");
                         String responseResult = jsonResponse.optString("Response");
 
-                        Session.setAccountAddress(LoginActivity.this, Optional.ofNullable(parametersResult.optString("AccountAddress")).orElse(""));
-                        Session.setAuthorization(LoginActivity.this, Optional.ofNullable(parametersResult.optString("AuthorizationToken")).orElse(""));
-
+                        if (parametersResult != null) {
+                            Session.setAccountAddress(LoginActivity.this, Optional.ofNullable(parametersResult.optString("AccountAddress")).orElse(""));
+                            Session.setAuthorization(LoginActivity.this, Optional.ofNullable(parametersResult.optString("AuthorizationToken")).orElse(""));
+                        }
+                        Session.setActorCategory(LoginActivity.this,targetResult);
                         Helpers.responseIntentController(LoginActivity.this,targetResult);
                         Helpers.responseMessageController(LoginActivity.this,responseResult);
 

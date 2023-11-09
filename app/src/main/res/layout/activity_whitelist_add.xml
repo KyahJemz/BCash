@@ -96,7 +96,7 @@
                         style="@style/FormTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Id Number" />
+                        android:text="Whitelisting school ID number:" />
 
                     <EditText
                         android:id="@+id/et_IdNumber"
@@ -104,6 +104,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:ems="10"
+                        android:hint="Id number"
                         android:inputType="text" />
                 </LinearLayout>
 
@@ -118,7 +119,7 @@
                         style="@style/FormTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Name" />
+                        android:text="Whitelisting Name" />
 
                     <EditText
                         android:id="@+id/et_Name"
@@ -193,6 +194,7 @@
                         android:layout_height="40dp"
                         android:ems="10"
                         android:maxLength="6"
+                        android:hint="6 digit PIN code"
                         android:inputType="numberPassword" />
 
                     <TextView

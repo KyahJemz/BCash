@@ -298,8 +298,11 @@ public class PINValidationActivity extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response.body().string());
                             String successResult = jsonResponse.optString("Success");
                             String targetResult = jsonResponse.optString("Target");
-                            String parametersResult = jsonResponse.optString("Parameters");
+                            JSONObject parametersResult = jsonResponse.optJSONObject("Parameters");
                             String responseResult = jsonResponse.optString("Response");
+
+                            Session.setAccountAddress(PINValidationActivity.this, Optional.ofNullable(parametersResult.optString("AccountAddress")).orElse(""));
+                            Session.setAuthorization(PINValidationActivity.this, Optional.ofNullable(parametersResult.optString("AuthorizationToken")).orElse(""));
 
                             Session.setActorCategory(PINValidationActivity.this,targetResult);
                             Helpers.responseIntentController(PINValidationActivity.this,targetResult);

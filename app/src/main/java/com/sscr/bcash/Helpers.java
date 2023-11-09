@@ -74,16 +74,10 @@ public class Helpers {
 
     public static void responseIntentController (Activity activity, String intentResponse) {
         switch (intentResponse) {
-            case "":
-                Session.setIntent(activity,"MobileLogin");
-                Intent Blank = new Intent(activity, LoginActivity.class);
-                activity.startActivity(Blank);
-                activity.finish();
-                break;
 
             case "Login":
                 Session.setIntent(activity,"MobileLogin");
-                Intent Login = new Intent(activity, LoginActivity.class);
+                Intent Login = new Intent(activity, MainActivity.class);
                 activity.startActivity(Login);
                 activity.finish();
                 break;
@@ -128,12 +122,11 @@ public class Helpers {
                 break;
 
             case "null":
-
                 break;
 
             default:
                 Session.setIntent(activity,"MobileLogin");
-                Intent Default = new Intent(activity, LoginActivity.class);
+                Intent Default = new Intent(activity, MainActivity.class);
                 activity.startActivity(Default);
                 activity.finish();
                 break;
@@ -180,9 +173,13 @@ public class Helpers {
     }
 
     public static String getHiddenBalance(String input) {
+        double amount = Double.parseDouble(input);
+        DecimalFormat decimalFormat = new DecimalFormat("0.00");
+        String amountText = decimalFormat.format(amount);
+
         StringBuilder modifiedString = new StringBuilder();
-        for (int i = 0; i < input.length(); i++) {
-            char currentChar = input.charAt(i);
+        for (int i = 0; i < amountText.length(); i++) {
+            char currentChar = amountText.charAt(i);
             if (Character.isDigit(currentChar)) {
                 modifiedString.append('*');
             } else {

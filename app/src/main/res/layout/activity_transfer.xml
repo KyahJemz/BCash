@@ -94,7 +94,7 @@
                         style="@style/FormTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/receiver_id" />
+                        android:text="Receiver School Id Number:" />
 
                     <EditText
                         android:id="@+id/et_ReceiverId"
@@ -102,6 +102,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:ems="10"
+                        android:hint="Id number"
                         android:inputType="text" />
                 </LinearLayout>
 
@@ -123,7 +124,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:ems="10"
-                        android:hint="0.00"
+                        android:hint="₱1.00 - ₱1,000.00"
                         android:inputType="numberDecimal" />
                 </LinearLayout>
 
