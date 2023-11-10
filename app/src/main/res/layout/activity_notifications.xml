@@ -59,7 +59,7 @@
                 style="@style/HeaderText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/notifications" />
+                android:text="Announcements" />
 
         </LinearLayout>
 

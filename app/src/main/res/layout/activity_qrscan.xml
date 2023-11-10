@@ -78,7 +78,7 @@
             android:paddingVertical="10dp"
             android:paddingHorizontal="30dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_card"
+            android:background="@drawable/button_gold"
             android:text="Start Scanning" />
 
     </LinearLayout>

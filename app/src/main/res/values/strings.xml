@@ -9,7 +9,7 @@
     <!-- GENERAL -->
     <string name="Nav1">Home</string>
     <string name="Nav2">Transactions</string>
-    <string name="Nav3">Notifications</string>
+    <string name="Nav3">Announcements</string>
     <string name="Nav4">Profile</string>
 
     <!-- HOME -->

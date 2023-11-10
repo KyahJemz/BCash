@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -357,17 +358,31 @@ public class ProfileActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                if (!response.isSuccessful()) {
-                    Log.e("OkHttpRequest", "Unsuccessful response: " + response.code());
-                } else {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }
-                    });
+                try {
+                    if (!response.isSuccessful()) {
+                        Log.e("OkHttpRequest", "Unsuccessful response: " + response.code());
+                    } else {
+                        JSONObject jsonResponse = new JSONObject(response.body().string());
+                        String successResult = jsonResponse.optString("Success");
+                        String targetResult = jsonResponse.optString("Target");
+                        String parametersArray = jsonResponse.optString("Parameters");
+                        String responseResult = jsonResponse.optString("Response");
+
+                        Helpers.responseIntentController(ProfileActivity.this,targetResult);
+                        Helpers.responseMessageController(ProfileActivity.this,responseResult);
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
+                        });
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.e("OkHttpRequest", "JSON Parsing Error");
                 }
             }
         };

@@ -314,9 +314,9 @@ public class HomeActivity extends AppCompatActivity {
         } else if (Objects.equals(Session.getActorCategory(HomeActivity.this), "6")) {
 
         } else if (Objects.equals(Session.getActorCategory(HomeActivity.this), "7")) {
-            ll_HomeCardNav1.setVisibility(View.GONE);
             ll_HomeCardNav2.setVisibility(View.GONE);
             ll_HomeCardNav3.setVisibility(View.GONE);
+            ll_HomeCardNav4.setVisibility(View.GONE);
         } else {
 
         }
@@ -413,6 +413,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
     private void ScanForPurchases(){
+        if (Session.getActorCategory(HomeActivity.this).equals("7")){
+            return;
+        }
         // HEADER
         RequestCustomHeaders customHeaders = new RequestCustomHeaders();
         customHeaders.addHeader("Content-Type", "application/json");

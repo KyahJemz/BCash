@@ -71,9 +71,6 @@ public class LoginActivity extends AppCompatActivity {
 
                     }
                 });
-
-        Session.setAccountAddress(LoginActivity.this, "");
-        Session.setAuthorization(LoginActivity.this, "");
     }
 
     private void signIn() {
@@ -179,8 +176,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
     );
-
-
 
     @Override
     public void onBackPressed() {
