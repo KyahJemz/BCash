@@ -145,8 +145,21 @@ public class HomeActivity extends AppCompatActivity {
                                     tv_HomeProfileCardBalance.setText(Helpers.getBalance(Optional.ofNullable(Session.getBalance(HomeActivity.this)).orElse("0.00")));
                                     iv_HomeProfileCardBalanceVisible.setImageResource(R.drawable.icon_visibility);
                                 }
+                                if (Session.getActorCategory(HomeActivity.this).equals("5")) {
+                                    ll_HomeCardNav2.setVisibility(View.VISIBLE);
+                                    ll_HomeCardNav3.setVisibility(View.VISIBLE);
+                                    ll_HomeCardNav4.setVisibility(View.VISIBLE);
+                                } else if (Session.getActorCategory(HomeActivity.this).equals("6")) {
+                                    ll_HomeCardNav2.setVisibility(View.VISIBLE);
+                                    ll_HomeCardNav3.setVisibility(View.VISIBLE);
+                                    ll_HomeCardNav4.setVisibility(View.VISIBLE);
+                                } else if (Session.getActorCategory(HomeActivity.this).equals("7")) {
+                                    ll_HomeCardNav2.setVisibility(View.GONE);
+                                    ll_HomeCardNav3.setVisibility(View.GONE);
+                                    ll_HomeCardNav4.setVisibility(View.GONE);
+                                } else {
 
-
+                                }
 
                                 tv_HomeProfileCardName = findViewById(R.id.tv_HomeProfileCardName);
                                 tv_HomeProfileCardName.setText(Firstname.toUpperCase() + " " +Lastname.toUpperCase());
@@ -308,18 +321,6 @@ public class HomeActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        if (Objects.equals(Session.getActorCategory(HomeActivity.this), "5")) {
-
-        } else if (Objects.equals(Session.getActorCategory(HomeActivity.this), "6")) {
-
-        } else if (Objects.equals(Session.getActorCategory(HomeActivity.this), "7")) {
-            ll_HomeCardNav2.setVisibility(View.GONE);
-            ll_HomeCardNav3.setVisibility(View.GONE);
-            ll_HomeCardNav4.setVisibility(View.GONE);
-        } else {
-
-        }
 
         PopulateRecentTransactions();
 

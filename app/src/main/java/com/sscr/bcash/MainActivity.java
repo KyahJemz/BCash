@@ -73,12 +73,15 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject jsonResponse = new JSONObject(response.body().string());
                         String successResult = jsonResponse.optString("Success");
 
-                        if (successResult.equals("false")){
-                            LogoutCurrentAccount();
-                        } else {
-                            Session.setAccountAddress(MainActivity.this, "");
-                            Session.setAuthorization(MainActivity.this, "");
-                        }
+                       // if (successResult.equals("false")){
+                            //LogoutCurrentAccount();
+                       //} else {
+                       //     Session.setAccountAddress(MainActivity.this, "");
+                       //     Session.setAuthorization(MainActivity.this, "");
+                       // }
+
+                        Session.setAccountAddress(MainActivity.this, "");
+                        Session.setAuthorization(MainActivity.this, "");
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -80,6 +80,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private void navigateToSecondActivity(String idToken, String userEmail, String userGivenName, String userFamilyName, String userPhotoUrl) {
 
+        Session.setAccountAddress(LoginActivity.this, "");
+        Session.setAuthorization(LoginActivity.this, "");
+
         Session.setFirstName(LoginActivity.this,userGivenName);
         Session.setLastName(LoginActivity.this,userFamilyName);
         Session.setProfileImage(LoginActivity.this,userPhotoUrl);
@@ -114,6 +117,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call call, IOException e) {
                 Log.e("OkHttpRequest", "Failed: " + e.getMessage());
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(LoginActivity.this, "Network Failure!", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
 
             @Override
@@ -121,6 +130,12 @@ public class LoginActivity extends AppCompatActivity {
                 try {
                     if (!response.isSuccessful()) {
                         Log.e("OkHttpRequest", "Unsuccessful response: " + response.code());
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(LoginActivity.this, "Network Failure: " + response.code(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     } else {
                         JSONObject jsonResponse = new JSONObject(response.body().string());
                         String successResult = jsonResponse.optString("Success");

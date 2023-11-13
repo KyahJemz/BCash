@@ -304,6 +304,7 @@ public class PINValidationActivity extends AppCompatActivity {
                             Session.setAccountAddress(PINValidationActivity.this, Optional.ofNullable(parametersResult.optString("AccountAddress")).orElse(""));
                             Session.setAuthorization(PINValidationActivity.this, Optional.ofNullable(parametersResult.optString("AuthorizationToken")).orElse(""));
 
+                            Log.d("TARGET RESULT", targetResult);
                             Session.setActorCategory(PINValidationActivity.this,targetResult);
                             Helpers.responseIntentController(PINValidationActivity.this,targetResult);
                             Helpers.responseMessageController(PINValidationActivity.this,responseResult);

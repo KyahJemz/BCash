@@ -26,6 +26,8 @@ import okhttp3.Response;
 public class Helpers {
     public static void getIpAddress(Context context){
 
+        Activity activity = (Activity) context;
+
         Callback IpAddressCallback = new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
