@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void LogoutCurrentAccount(){
+        Session.setAccountAddress(MainActivity.this, "");
+        Session.setAuthorization(MainActivity.this, "");
         if (Session.getAccountAddress(MainActivity.this).equals("") || Session.getAccountAddress(MainActivity.this) == null){
             return;
         }

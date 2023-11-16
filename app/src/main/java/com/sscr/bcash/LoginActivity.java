@@ -3,11 +3,13 @@ package com.sscr.bcash;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -35,12 +37,15 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient gsc;
     private LinearLayout btn_GoogleSignIn;
     OkHttpRequestHelper requestHelper = new OkHttpRequestHelper();
+    ConstraintLayout cl_Loading;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        cl_Loading = findViewById(R.id.cl_Loading);
 
         String webClientId = getString(R.string.web_client_id);
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -79,6 +84,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void navigateToSecondActivity(String idToken, String userEmail, String userGivenName, String userFamilyName, String userPhotoUrl) {
+
+        cl_Loading.setVisibility(View.VISIBLE);
 
         Session.setAccountAddress(LoginActivity.this, "");
         Session.setAuthorization(LoginActivity.this, "");
@@ -120,6 +127,7 @@ public class LoginActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        cl_Loading.setVisibility(View.GONE);
                         Toast.makeText(LoginActivity.this, "Network Failure!", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -133,6 +141,7 @@ public class LoginActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                cl_Loading.setVisibility(View.GONE);
                                 Toast.makeText(LoginActivity.this, "Network Failure: " + response.code(), Toast.LENGTH_SHORT).show();
                             }
                         });
@@ -151,6 +160,12 @@ public class LoginActivity extends AppCompatActivity {
                         Helpers.responseIntentController(LoginActivity.this,targetResult);
                         Helpers.responseMessageController(LoginActivity.this,responseResult);
 
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                cl_Loading.setVisibility(View.GONE);
+                            }
+                        });
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
