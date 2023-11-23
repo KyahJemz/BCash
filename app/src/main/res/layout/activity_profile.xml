@@ -270,7 +270,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/background_circle_red"
                     android:padding="10dp"
-                    android:src="@drawable/icon_profile_card" />
+                        android:src="@drawable/icon_profile_card" />
 
                 <TextView
                     style="@style/ProfileItemText"

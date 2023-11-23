@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DA261D"
+    android:background="#810a0b"
     android:orientation="vertical"
     tools:context=".ReceiptActivity">
 
@@ -85,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="20dp"
-                    android:text="Transaction Complete"
+                    android:text="Transaction Receipt"
                     android:textAlignment="center"
                     android:textSize="18sp" />
 

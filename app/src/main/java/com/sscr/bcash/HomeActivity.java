@@ -109,18 +109,24 @@ public class HomeActivity extends AppCompatActivity {
                         JSONObject Accounts = parametersResult.optJSONObject("Account");
                         JSONObject Data = parametersResult.optJSONObject("Details");
                         JSONObject Guardian;
-                        if (Objects.equals(Session.getActorCategory(HomeActivity.this), "7")) {
-                            Guardian = parametersResult.optJSONObject("Guardian");
-                        }
 
                         String SchoolPersonalId = Data.optString("SchoolPersonalId");
                         String Balance = Data.optString("Balance");
+
                         String Firstname = Accounts.optString("Firstname");
                         String Lastname = Accounts.optString("Lastname");
+
+                        if (Objects.equals(Session.getActorCategory(HomeActivity.this), "7")) {
+                            Guardian = parametersResult.optJSONObject("Guardian");
+                            Session.setFirstName(HomeActivity.this, Guardian.optString("Firstname"));
+                            Session.setLastName(HomeActivity.this, Guardian.optString("Lastname"));
+                        }
 
                         Session.setBalance(HomeActivity.this,Balance);
                         Session.setPersonalId(HomeActivity.this,SchoolPersonalId);
 
+                        String finalFirstname = Firstname;
+                        String finalLastname = Lastname;
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
@@ -162,7 +168,7 @@ public class HomeActivity extends AppCompatActivity {
                                 }
 
                                 tv_HomeProfileCardName = findViewById(R.id.tv_HomeProfileCardName);
-                                tv_HomeProfileCardName.setText(Firstname.toUpperCase() + " " +Lastname.toUpperCase());
+                                tv_HomeProfileCardName.setText(Firstname.toUpperCase() + " " + Lastname.toUpperCase());
                             }
                         });
                     }

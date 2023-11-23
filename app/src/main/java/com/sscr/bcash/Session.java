@@ -93,7 +93,6 @@ public class Session {
     }
 }
 
-
 /*
     private Session session;//global variable
     session = new Session(cntx); //in oncreate
