@@ -1,7 +1,7 @@
 package com.sscr.bcash;
 
 public class Defaults {
-    public static String API = "http://192.168.0.164/index.php/Api/";
+    public static String API = "https:jh0kh1a.localto.net/index.php/Api/";
     public static String AuthEndPoint = "Auth/Process";
     public static String RequestEndPoint = "Request/Process";
     public static String HelperEndPoint = "Helper/Process";

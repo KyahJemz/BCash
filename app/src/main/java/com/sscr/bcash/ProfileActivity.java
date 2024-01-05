@@ -129,6 +129,18 @@ public class ProfileActivity extends AppCompatActivity {
                                 s_AllowModifySettings = findViewById(R.id.s_AllowModifySettings);
                                 s_AllowModifySettings.setChecked(AllowModifySettings.equals("1"));
 
+
+                                if (Session.getActorCategory(ProfileActivity.this).equals("7")){
+
+                                } else {
+                                    if(AllowModifySettings.equals("0")){
+                                        s_TransactionAutoConfirm.setClickable(false);
+                                        s_AllowUseOfCard.setClickable(false);
+                                        s_AllowTransactions.setClickable(false);
+                                        s_AllowTransfers.setClickable(false);
+                                    }
+                                }
+
                                 cl_Loading = findViewById(R.id.cl_Loading);
                                 cl_Loading.setVisibility(View.GONE);
                             }

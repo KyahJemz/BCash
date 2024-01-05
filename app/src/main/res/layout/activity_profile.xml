@@ -143,7 +143,7 @@
                     style="@style/ProfileName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/loading" />
+                    android:text="Stephen Regan James Bacolod Layson" />
 
                 <TextView
                     android:id="@+id/tv_ProfileEmail"
